@@ -1,0 +1,6 @@
+Diagnostic Results:
+PASS: Python Environment
+PASS: Package Dependencies
+PASS: Port Availability
+PASS: App Import
+PASS: Server Startup

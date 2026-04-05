@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to TXT Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-pdf"></i> PDF to TXT Converter</h1>
+            <p class="subtitle">Upload your PDF file and get a downloadable text file in seconds.</p>
+        </header>
+
+        <main>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h3>Drag & Drop your PDF here</h3>
+                <p>or click to browse</p>
+                <input type="file" id="fileInput" accept=".pdf" hidden>
+                <button class="browse-btn" id="browseBtn">Choose File</button>
+                <p class="file-restriction">Only PDF files are supported (max 50MB)</p>
+            </div>
+
+            <div class="file-info" id="fileInfo">
+                <!-- Selected file info will appear here -->
+            </div>
+
+            <div class="controls">
+                <button class="btn convert-btn" id="convertBtn" disabled>
+                    <i class="fas fa-sync-alt"></i> Convert to TXT
+                </button>
+                <button class="btn reset-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">Processing...</p>
+            </div>
+
+            <div class="result" id="result" style="display: none;">
+                <!-- Result message will appear here -->
+            </div>
+
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> How it works</h3>
+                <ol>
+                    <li>Select a PDF file by dragging & dropping or clicking the "Choose File" button.</li>
+                    <li>Click "Convert to TXT" to start the conversion process.</li>
+                    <li>Wait a few seconds while we extract text from your PDF.</li>
+                    <li>Download the resulting TXT file automatically.</li>
+                </ol>
+                <div class="note">
+                    <strong>Note:</strong> This tool preserves page breaks and formatting as much as possible. Scanned PDFs (image-based) may not produce accurate text.
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with <i class="fas fa-heart"></i> using Flask & PDFPlumber | <a href="https://github.com/yourusername/pdf-to-txt-tool" target="_blank">View on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
